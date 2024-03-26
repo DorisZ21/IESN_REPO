@@ -1,0 +1,100 @@
+// EX1
+module(TableMultiplication;nombreNaturel;)
+---* 
+multiplicateur = 1
+
+while (multiplicateur <= 10)
+  resultat = nombre * multiplicateur
+  sortir multiplicateur," x ",nombre," = ",resultat
+  multiplicateur++
+endwhile
+------
+
+// EX2
+
+module(MultiplierTroisNombres;nombreDebut;)
+---*
+nombreFin = nombreDebut + 3
+while (nombreDebut <= nombreFin)
+  module(TableMultiplication;nombreDebut;)
+  nombreDebut++
+endwhile
+------
+
+// EX3
+
+ // ... Même chose que les autres juste une boucle while (nb != 0) en plus
+ // et réutiliser le module de multiplication simple
+
+
+// EX4
+
+module(AffichePrixTotalAPayerVisite;nbMembresFamille;)
+---*
+obtenir nb
+while(nb != -1)
+  compteurMembre = 1
+  while (compteurMembre <= nbMembresFamilles)
+     obtenir age
+     if (age < 12) // inférieur à 12
+       prix = 0
+     else
+      if (age <= 17) // inférieur ou égal à 17
+        prix = 4
+      else
+          if (age <= 64) // inférieur ou égal à 64
+              prix = 7,50
+          else
+             prix = 6.50
+          endif
+      endif
+    endif
+
+  prixTotal = prixTotal + prix
+  compteurMembre++
+  endwhile
+  sortir prixTotal
+  obtenir nb
+endwhile
+------
+
+// EX5
+module(AfficheAgePlusJeunePlusVieux;;)
+---*
+agePlusJeune = HV
+agePlusVieux = 0
+obtenir ageEtudiant
+while(ageEtudiant != -1)
+  if(ageEtudiant > agePlusVieux)
+    agePlusVieux = ageEtudiant
+  endif
+  
+  if(ageEtudiant < agePlusJeune)
+    agePlusJeune = ageEtudiant
+  endif 
+obtenir ageEtudiant
+endwhile
+
+sortir agePlusJeune, agePlusVieux 
+------
+
+
+// EX 6
+
+// a son but est de renvoyer un nombre strictement inférieur à 20
+
+// b - Dans le module il y'a un out nombre mais il n'y a aucune sortie
+//     - A quoi correspond bon ?? 
+//     - bon != true, c'est très moche !! il faut écrire NOT bon ou !bon pour la négation de true
+//     - Nom de Module "monModule" ??? Que fait ce module ???
+//     -  paranthèse dans if() !!
+//     - pas besoins de booléan
+
+module(nbInferieurA20;;nombre)
+---*
+obtenir nombre
+while(nombre >= 20)
+obtenir nombre 
+endwhile
+------
+

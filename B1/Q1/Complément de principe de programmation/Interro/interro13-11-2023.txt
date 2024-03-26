@@ -1,0 +1,89 @@
+---*
+obtenir nombre 
+module(estValide;nombre;valide)
+
+while (!valide)
+  obtenir nombre 
+  module(estValide;nombre;valide)
+endwhile
+
+compteurCroissant = 1
+while (compteurCroissant <= nombre)
+  module(afficheLigneEtoiles;compteurCroissant;)
+  compteurCroissant = compteurBoucle + 2;
+endwhile
+
+compteurDecroissant = nombre - 1
+while (compteurDecroissant >= 1)
+  module(afficheLigneEtoiles;compteurDecroissant;)
+  compteurDecroissant--
+endwhile
+------
+
+
+module(CalculeNoteJeu;nbHeures,appreciation;noteJeu)
+---*
+noteJeu = 0
+if (nbHeures <= 8)
+  noteJeu += 2 * nbHeures
+else
+  noteJeu += (8 * 2) + ((nbHeures - 8) * 3) 
+endif
+
+if (appreciation == 1)
+  noteJeu -= noteJeu * 0.10
+else
+  if (appreciation == 3)
+    noteJeu *= 1.10
+  endif  
+endif
+
+sortir noteJeu
+------
+
+
+
+---*
+nbJeuBon = 0
+notesJeuBon = 0
+nbHeuresTotal = 0
+nbHeuresJeuMauvais = 0
+meilleurNoteJeu = LV
+nomMeilleurJeu = ""
+obtenir nomJeu
+
+while (nomJeu != "")
+  obtenir nbHeures
+  obtenir appreciation
+   
+  nbHeuresTotal += nbHeures
+
+ module(CalculeNoteJeu;nbHeures,appreciation;noteJeu)
+ 
+ if (noteJeu > meilleurNoteJeu)
+    meilleurNoteJeu = noteJeu
+    nomMeilleurJeu = nomJeu
+ endif 
+
+if(appreciation == 1)
+ nbHeuresJeuMauvais += nbHeures
+endif
+
+if(appreciation == 3)
+  notesJeuBon += noteJeu
+  nbJeuBon++
+endif
+
+ sortir nomJeu
+ sortir noteJeu 
+
+ obtenir nomJeu
+endwhile
+
+moyenneNotesJeuBon = noteJeuBon / nbJeuBon
+pourcentageHeuresJeuMauvais = (nbHeuresJeuMauvais * 100) / nbHeuresJeuTotal
+
+sortir moyenneNotesJeuBon
+sortir pourcentageHeuresJeuMauvais
+sortir nomMeilleurJeu
+------

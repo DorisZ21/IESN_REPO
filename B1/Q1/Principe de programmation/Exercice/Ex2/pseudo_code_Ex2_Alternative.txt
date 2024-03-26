@@ -1,0 +1,87 @@
+// ECERCICE 1 C
+module(ComparerA100;;)
+---*
+obtenir n
+if (n < 100)
+ sortir "plus petit"
+else 
+if(n > 100)
+  sortir "plus grand"
+else
+  sortir "égal"
+endif
+------
+
+// EXERCICE 2
+
+module(ParcAttractionTaille;)
+---*
+obtenir taillePersonne
+if(taillePeronne > tailleMax)
+  message = "Taille trop grande"
+else
+if(taillePersonne < tailleMin)
+  message = "Taille trop petite"
+else
+  message = "Accès autorisé"
+endif 
+endif
+sortir message
+------
+
+// EXERCICE 4
+
+module(AtelierFlamenco;agePersonne;)
+---*
+obtenir agePersonne
+if (agePersonne < 6)
+  message =  "Il faut minimum 6 ans pour s'inscrire"
+else
+if (agePersonne >= 12 && agePersonne <= 18)
+  prix 120
+else
+if (agePersonne > 18)
+  prix 160
+else
+  prix 100
+endif
+endif
+endif
+sortir prix
+------
+
+// EXERCICE 5
+
+module(Obtenir0à10;)
+---*
+obtenir nombre
+if (nombre > 0 && nombre < 10)
+  sortir "Correct !"
+else
+  sortir "Erreur !"
+endif
+------
+
+// EXERCICE 3
+
+module(NombrePositifNegatif;)
+---*
+obtenir nombre1,nombre2
+
+if (nombre1 > 0 && nombre2 > 0)
+  sortir "positif"
+else
+if (nombre1 < 0 && nombre2 < 0)
+  sortir "positif"
+else
+if (nombre1 < 0 && nombre2 < 0)
+  sortir "negatif"
+else
+if (nombre1 == 0 OR nombre2 == 0)
+ sortir "nul"
+endif
+endif
+endif
+endif
+------
+

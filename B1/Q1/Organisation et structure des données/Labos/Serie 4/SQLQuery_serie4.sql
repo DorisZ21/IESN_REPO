@@ -1,0 +1,15 @@
+--select * from categorie,localite,fournisseur,produit,client,employe,commande,ligne_commande
+--select nom,description from categorie;
+--select prenom,nom,date_naissance,commission from employe;
+--select nom,conditionnement,prix_unitaire as "prix HTVA", prix_unitaire * 1.21 as "prix TVAc" FROM produit;
+--select DISTINCT fonction from employe;
+--select* from employe where numero = 4;
+--select nom,prix_unitaire,conditionnement from produit where prix_unitaire < 50;
+--select * from fournisseur where fax IS NULL; 
+--select reference, nom from produit where nom like'S%e' AND reference <= 50;
+--select nom,prix_unitaire from produit where prix_unitaire between 50 AND 100;
+--select nom,telephone from client where code in('ANTON','CACTU','FISSA','PICCO','QUICK','VICTE');
+--select ville,code_postal,pays from localite WHERE pays = 'France' OR code_postal like '_2%';
+--select * from employe where titre in('Mlle','Mme','M') AND salaire between 2000 AND 3000;
+--select prenom,nom,salaire as "salaire de base", salaire + commission as "salaire total" from employe where commission IS NOT NULL;
+--select prix_unitaire,quantite,remise, prix_unitaire * quantite as "total avant remise", (prix_unitaire * quantite) - (prix_unitaire) * remise as "total après remise" from ligne_commande where quantite > 100

@@ -1,0 +1,60 @@
+html {
+	background-color: #444;
+}
+
+body {
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #eee;
+	padding: 16px;
+}
+
+#videoC {
+	width: 100%;
+}
+
+table {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+th, td {
+	text-align: center;
+	padding: 2px 4px;
+	border: 1px solid white;
+	border-radius: 8px;
+}
+
+th {
+	background-color: #222;
+	color: #eee;
+}
+
+td {
+	background-color: #bbb;
+}
+
+.codeC {
+	font-family: "consolas";
+	color: crimson;
+	font-weight: bold;
+}
+
+.presentation {
+	background-color: lemonchiffon;
+	padding: 6px;
+	border: 1px solid crimson;
+}
+
+.presentation p:first-child {
+	margin-top: 0;
+}
+
+.presentation p:last-child {
+	margin-bottom: 0;
+}
+
+:lang(en) {
+	font-style: italic;
+}

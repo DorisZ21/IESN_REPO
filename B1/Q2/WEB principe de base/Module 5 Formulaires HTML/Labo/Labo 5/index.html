@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Labo 5 Quiz HTML</title>
+</head>
+<body>
+    <form method="POST" action="https://testphpig3.000webhostapp.com/showGetPost.php">
+        <ul>
+            <li>
+                <label for="prenom">Prénom</label>
+                <input type="text" name="prenom" id="prenom">
+            </li>
+            <li>
+                <label for="nom">Nom</label>
+                <input type="text" name="nom" id="nom">
+            </li>
+            <li>
+                <label for="email">Adresse mail</label>
+                <input type="email" name="email" id="email">
+            </li>
+            <li>
+                <input type="checkbox" name="quiz" id="quiz">
+                <label for="">C'est la première fois que je réponds à ce quiz.</label>
+            </li>
+            <li>
+                <label for="">Bloc d'étude</label>
+                <input type="radio" name="etudes" id="an1" value="1" checked>
+                <label for="an1">1<sup>er</sup></label>
+                <input type="radio" name="etudes" id="an2" value="2">
+                <label for="an2">2<sup>eme</sup></label>
+                <input type="radio" name="etudes" id="an3" value="3">
+                <label for="an3">3<sup>eme</sup></label>
+            </li>
+        </ul>
+        <button type="submit">Envoyer</button>
+        <button type="reset">Réinitialiser</button>
+    </form>
+</body>
+</html>

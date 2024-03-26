@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Exo_tab_double_indice_V3",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Exo_tab_double_indice_V3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Exo_tab_double_indice_V3-Debug-cbbabe2f49cab183e90d.json",
+					"name" : "Exo_tab_double_indice_V3",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "E:/IESN/B1/Q2/Langage de programmation avanc\u00e9e/Module 0 tableaux \u00e0 deux indices/Exo/Exo_tab_double_indice_V3/cmake-build-debug",
+		"source" : "E:/IESN/B1/Q2/Langage de programmation avanc\u00e9e/Module 0 tableaux \u00e0 deux indices/Exo/Exo_tab_double_indice_V3"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

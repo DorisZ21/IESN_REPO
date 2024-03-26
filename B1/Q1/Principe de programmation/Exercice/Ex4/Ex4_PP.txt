@@ -1,0 +1,133 @@
+// EX 1
+module(AfficheNombrePair;tabNombre,tailleTab;)
+---*
+i = 0
+while(i < tailleTab)
+if(tabNombre[i] % 2 == 0)
+  sortir tabNombre[i]
+endif
+i++
+endwhile
+------
+
+// Ex 2
+module(tableau1a20;;tabNombre)
+---*
+i = 0
+while(i < 20)
+  tabNombre[i] = i + 1
+  i++
+endwhile
+------
+
+// Ex3
+module(remplirTabCroissantDecroissant;;tabNombre)
+---*
+nbElems = 0
+valeur = 1
+while(nbElems < 10)
+  tabNombre[nbElems] = valeur
+  nbElems++
+  valeur++
+endwhile
+valeur -= 2
+while (nbElems < 20)
+  tabNombre[nbElems] = valeur
+  nbElems++
+  valeur--
+endwhile
+------
+
+// Ex 4
+
+module(tableau100cellules;;tab)
+---*
+valeur = 5
+iElems = 0
+
+while(iElems < 100)
+tab[iElems] = valeur
+iElems ++
+valeur *= 2 
+endwhile
+------
+
+// Ex 5
+
+
+
+// Ex 6
+
+module(indiceValeurTrouve;tab, taille, elemRecherche;i)
+---*
+i = 0
+while(i < taille && tab[i] != elemRecherche)
+  i++
+endwhile 
+if (i == taille)
+  i = -1
+endif 
+
+------
+
+// EX7
+
+module(afficheMoyenneCote;cotes;)
+---*
+iCote = 0 
+totalCotes = 0
+while(iCote < 10)
+sortir cotes[iCote]
+// Affichage des côtes
+totalCotes += cotes[iCote]
+iCote++
+endwhile
+
+// Affichage de la moyenne
+sortir totalCotes / 10
+------
+
+// Ex 8
+module(AffichePlusPetiteValeur;tabNombres;) 
+---*
+nombrePlusPetit = tabNombres[0]
+indiceNombrePlusPetit = 0
+iNombre = 1
+while(iNombre < 20)
+if(tabNombres[iNombre] < nombrePlusPetit)
+  nombrePlusPetit = tabNombres[iNombre]
+  indiceNombrePlusPetit = iNombre;
+endif
+iNombre++
+endwhile
+
+sortir nombrePlusPetit, indiceNombrePlusPetit
+------ 
+
+// Ex 9
+a)
+module(RemplirTabLots;;tabLots)
+---*
+tabLots = ARRAY[150]
+iLot = 0
+while(iLot < 150)
+obtenir nomLot
+tabLots[iLot] = nomLot
+iLot++
+endwhile
+------
+
+b)
+module(MonModule;tabLots;)
+---*
+obtenir numeroLot
+while(numeroLot != -1)
+  if(numeroLot - 1 > 150)
+    sortir "lot gagné : ", tabLots[numeroLot - 1] 
+  else
+    sortir "numero incorrect"
+  endif
+obtenir numeroLot
+endwhile
+------
+

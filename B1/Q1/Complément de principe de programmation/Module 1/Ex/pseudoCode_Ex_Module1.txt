@@ -1,0 +1,156 @@
+module(AfficheInfosRectangle;largeur,longueur;aire,perimetre)
+---*
+obtenir largeur, longueur
+aire = (longueur * largeur)
+perimetre = 2 * (longueur + largeur)
+sortir "Aire : " aire, " Perimètre ",  perimetre
+------ 
+
+module(afficherRésultatEnquete;;resultat)
+---*
+nbAvis = 500
+nbAvisPositifs = 270
+proportionPositifs = nbAvisPositifs / nbAvis
+majoritePositifs = proportionPositifs > 0.5
+
+if (nbrAvis <= 100 OR (proportionPositifs > 0.4 AND proportionPositifs < 0.6))
+  résultat = "pas de résultat significatif"
+else if(nbAvis > 100 AND majoritePositifs)
+résultat = "significativement positif"
+else
+résultat = "significativement négatif"
+endif
+sortir résultat
+------
+
+
+if (age < 18 && !accompagné)
+
+else
+
+endif
+
+
+if (nbAchats <= 5 OR nbAchats > 10)
+
+else
+
+endif
+
+
+if (tempsRestant <= 0 And aFiniExamen)
+
+else
+
+endif
+
+if (arriveALHeure OR aBonneExcuse)
+
+else
+
+endif
+
+if ((nbAvis >= 100) && (propPositif <= 0.4 || propPositif >= 0.6))
+
+else
+
+endif
+
+if (NOT clientRegulier || (nbCommandes2015 <= 5 && totlaCommandes <= 750))
+
+else
+
+endif
+
+if (codePostal != 5000 && dateNaissance < 20100101)
+
+else
+
+endif
+
+if (NOT echec || moyenne <= 16)
+
+else
+
+endif
+
+// EXERCICE 3.3
+module(JouetAOffrir;nom,anneeNaissance,genre;nom,jouetOffert)
+---*
+obtenir nom, anneeNaissance,genre
+if (anneeNaissance >= 2020)
+  jouetOffert = "Ours en peluche"
+else if(anneeNaissance >= 2018 && anneeNaissance <= 2019)
+if (genre == "M")
+  jouetOffert = "Voiture"
+else
+  jouetOffert = "Poupée"
+endif
+else if(anneeNaissance >= 2012 && annneeNaissance <= 2017 )
+  jouetOffert = "bande dessinée"
+else
+  jouetOffert = "pas de cadeau"
+endif
+sortir nom,jouetOffert 
+------
+
+// EXERCICE 3.4
+
+module(EnvoiColisPostal;poids,longueur,largeur,hauteur;messageErreur,taxeAppliquer)
+---*
+TAILLEMAX = 150
+VOLUMEMAX = 27
+obtenir poids,longueur,largeur,hauteur
+tailleTotal = (longeur + largeur + hauteur)
+taxe = 12
+if (poids > 10 OR tailleTotal > TAILLEMAX)
+  messageErreur = "colis hors normes"
+else
+volume = (largeur * longueur * hauteur) / 1000
+if (poids >= 5 && poids <= 10)
+taxe = taxe + 5
+endif
+endif
+if (volume > VOLUMEMAX)
+taxe = taxe + 8
+endif
+
+
+------
+
+// EXERCICE 3.8
+
+// Possibilité de le faire uniquement en deux test et non en trois comme fait ci dessous 
+module(VerifDate;joursDate,moisDate;messageInfoDate)
+---*
+obtenir joursDate,moisDate
+if (moisDate >= 1 AND moisDate <= 12)
+  if((moisDate == 4 OR moisDate == 6 OR moisDate == 9 OR moisDate == 11) && (joursDate >= 1 && joursDate <= 30))
+    messageInfoDate = "date correct"
+  else if((moisDate == 1 OR moisDate == 3 OR moisDate == 5 OR mois Date == 7 OR moisDate == 8 OR moisDate == 10 OR moisDate = 12) && (joursDate >= 1 && joursDate <= 31))
+    messageInfoDate = "date correct"
+  else if(moisDate == 2 && (joursDate >= 1 && joursDate <= 29))
+    messageInfoDate = "date correct"
+  else
+    messageInfoDate = "jours invalide"
+  endif
+else
+  messageInfoDate = "mois invalide"
+endif
+
+sortir messageInfoDate
+------
+
+// EXERCICE 3.10
+
+if (poidsBagage > 0 && poidsBagage < 15)
+  prixbagage = 24
+else if(poidsBagage >= 15 AND poidsBagage <= 20)
+  prixBagage = 36
+else if(poidsBagage > 20)
+  prixBagage = 50
+else
+  prixBagage = 0
+endif
+
+

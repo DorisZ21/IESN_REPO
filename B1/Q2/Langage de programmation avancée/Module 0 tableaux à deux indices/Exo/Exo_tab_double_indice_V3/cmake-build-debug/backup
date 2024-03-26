@@ -1,0 +1,128 @@
+// DEFINE
+
+// #define NB_TYPES_SYMBOLES 40
+
+
+// SIGNATURES DES FONCTIONS
+
+//void adresseObtenue(int[NB_SYMBOLES], int);
+//void afficheAdresse(int[NB_SYMBOLES], int);
+//void remplirAdresse(int[NB_ADRESSES][NB_SYMBOLES], int[NB_ADRESSES], int, int);
+//void affichePlanetes(char [NB_ADRESSES][NB_SYMBOLES], char[][NB_CARACT], int);
+//void remplirTabHistogramme(int[NB_TYPES_SYMBOLES]);
+//void histogrammesSymboles(int[NB_ADRESSES][NB_SYMBOLES],int[NB_TYPES_SYMBOLES], int);
+//void afficheNbOccurences(int[NB_TYPES_SYMBOLES]);
+
+// OBTENTION ET DECLARATION DES TABLEAUX ET VARIABLES
+
+    // int nbOccurencesSymboles[NB_TYPES_SYMBOLES];
+    //char reponse;
+    //int adresse[NB_SYMBOLES];
+	// int iAdresse = 0;
+/*do {
+		adresseObtenue(adresse, NB_SYMBOLES);
+		afficheAdresse(adresse, NB_SYMBOLES);
+		printf("\n");
+		printf("Entrez un nom pour votre planete.");
+		scanf_s("%s", noms[iAdresse], NB_CARACT);
+		getchar();
+		remplirAdresse(adresseSG, adresse, NB_SYMBOLES, iAdresse);
+		printf("\n");
+		printf("Avez vous visite une autre planete ?");
+		scanf_s("%c", &reponse, 1);
+		getchar();
+		iAdresse++;
+	} while (reponse == 'O');
+
+  */
+
+
+
+// APPEL
+
+//histogrammesSymboles(adresseSG,nbOccurencesSymboles,iAdresse);
+//affichePlanetes(adresseSG, noms, iAdresse);
+//afficheNbOccurences(nbOccurencesSymboles);
+
+
+
+// FONCTIONS
+
+/*void adresseObtenue(int adresse[NB_SYMBOLES], int nbSymboles) {
+	for (int iSymbole = 0; iSymbole < nbSymboles; iSymbole++) {
+        do {
+            printf("Entrez un symbole : ");
+            scanf_s("%d", &adresse[iSymbole]);
+        } while (adresse[iSymbole] < 1 || adresse[iSymbole] > 39);
+	}
+	getchar();
+}
+
+void afficheAdresse(int adresse[NB_SYMBOLES], int nbSymboles) {
+	for (int iSymbole = 0; iSymbole < nbSymboles; iSymbole++) {
+		printf("%2d ", adresse[iSymbole]);
+	}
+}
+
+void remplirAdresse(int adresseSG[NB_ADRESSES][NB_SYMBOLES], int adresse[NB_SYMBOLES], int nbSymboles, int iAdresse) {
+	for (int iSymbole = 0; iSymbole < nbSymboles; iSymbole++) {
+		adresseSG[iAdresse][iSymbole] = adresse[iSymbole];
+	}
+}
+
+
+void affichePlanetes(char adresseSG[NB_ADRESSES][NB_SYMBOLES], char noms[][NB_CARACT], int nbPlanetes) {
+	for (int iAdresse = 0; iAdresse < nbPlanetes; iAdresse++) {
+		for (int iSymbole = 0; iSymbole < NB_SYMBOLES; iSymbole++) {
+			printf("%d ", adresseSG[iAdresse][iSymbole]);
+		}
+		puts(noms[iAdresse]);
+		printf("\n");
+	}
+}
+
+void remplirTabHistogramme(int histogramme[NB_TYPES_SYMBOLES]){
+    for(int i = 1; i < NB_TYPES_SYMBOLES; i++){
+        histogramme[i] = 0;
+    }
+}
+
+void histogrammesSymboles(int adresseSG[NB_ADRESSES][NB_SYMBOLES],int histogramme[NB_TYPES_SYMBOLES], int nbPlanetes){
+    remplirTabHistogramme(histogramme);
+
+    for(int iAdresse = 0; iAdresse < nbPlanetes; iAdresse++){
+        for(int iSymbole = 0; iSymbole < NB_SYMBOLES; iSymbole++){
+            histogramme[adresseSG[iAdresse][iSymbole]]++;
+        }
+    }
+}
+
+void afficheNbOccurences(int histogramme[NB_TYPES_SYMBOLES]){
+    for(int iSymbole = 1; iSymbole < NB_TYPES_SYMBOLES; iSymbole++){
+        if(histogramme[iSymbole] > 0){
+            printf("Le symbole %d est apparu %d !",iSymbole,histogramme[iSymbole]);
+            printf("\n");
+        }
+    }
+}
+
+
+*/
+
+
+// TESTS
+
+/* printf("%d", nbOccurences);
+    printf("\n");
+    for(int i = 0; i < nbOccurences; i++){
+        printf(" %d ", indicesOccurrences[i]);
+    } */
+
+  /*  puts(noms[0]);
+    puts(noms[1]);
+    puts(noms[2]);
+    puts(noms[3]);
+    puts(noms[4]);
+    printf("%d  ",adresseSG[0][0]);
+    printf("   %d", adresseSG[0][1]); */
+

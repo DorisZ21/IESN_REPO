@@ -1,0 +1,44 @@
+// CONSTANTE
+// NB_SYMBOLES 6
+// NB_ADRESSE 5000
+
+// adresse { cell (NB_SYMBOLES *) { symbole
+
+// adressesSG { adresse { cell (NB_ADRESSE*) { symbole cell (NB_SYMBOLES*)
+
+// nomSG { cell (NB_ADRESSE*)
+
+
+// Précondition : nbSymboles >= 0 => est le nombre de symboles obtenus de l'utilisateur au clavier
+// Postcondition : adresse est un tableau rassemblant les nbSymboles >= 0 obtenus de l'utilisateur 
+// au clavier
+
+module(adresseObtenue;nbSymboles;adresse)
+---*
+iSymbole = 0
+while(iSymbole < nbSymboles)
+  obtenir adresse[iSymbole] 
+  iSymbole++
+endwhile
+------
+
+
+// précondition : adresse contient les nbSymboles >= 0 constituant l'adresse d'une planète.
+// Postcondition : l'adresse de la planète est affiché à l'écran au format suivant "%2d"
+
+module(afficheAdresse;adresse, nbSymboles;)
+---*
+iSymbole = 0
+while(iSymbole < nbSymboles)
+ sortir adresse[iSymbole]
+iSymbole++
+endwhile
+------
+
+
+---*
+ARRAY adressesSG[NB_ADRESSE][NB_SYMBOLES]
+ARRAY nomsSG[NB_ADRESSE]
+
+
+------

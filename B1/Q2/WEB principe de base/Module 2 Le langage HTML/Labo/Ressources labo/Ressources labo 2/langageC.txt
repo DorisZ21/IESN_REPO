@@ -1,0 +1,17 @@
+Cette section introduit la notion de variables en C et indique comment les utiliser dans des instructions d'entrées/sorties.
+
+Une variable C correspond à un emplacement mémoire où une valeur peut être stockée. Comme la place nécessaire pour stocker un entier (integer) ou un réel (floating-point number) n'est pas la même, pour pouvoir réserver l'espace mémoire correspondant, il faut préciser le type d'une variable quand on la déclare.
+
+Une fois une variable déclarée, il faut encore pouvoir lui affecter (assign) une valeur. La valeur en question peut être obtenue via des calculs divers ou tout simplement demandé à l'utilisateur.
+
+Pour communiquer avec l'utilisateur, on peut utiliser les instructions printf et scanf. Ces instructions, elles aussi, doivent savoir non seulement à quel endroit de la mémoire s'intéresser (l'emplacement de la variable) mais aussi le type de la valeur à manipuler afin de pouvoir identifier le codage à utiliser. Le type est donné par un code de format qui est l'un de ceux présentés dans le tableau suivant.
+
+
+
+La colonne "lecture" correspond à l'instruction scanf alors que la colonne "écriture" concerne l'instruction printf.
+
+Dans la section suivante, on abordera les arguments de fonctions et l'utilisation des variables en tant que paramètres.
+Ce sera également l'occasion d'introduire les notions très importantes de passage par valeur et de passage par adresse.
+
+
+

@@ -1,0 +1,346 @@
+// EX 1
+
+---*
+iCote = 0
+tabCote = ARRAY[100]
+tabNbEtudiantCote = ARRAY[21]
+
+while(iNbCote < 21)
+  tabNbEtudiantCote[iNbCote] = 0
+  iNbCote++
+endwhile
+
+while(iCote < 100)
+  obtenir cote
+  tabCote[iCote] = cote
+  tabNbEtudiantCote[cote] += 1
+  iCote ++
+endwhile
+
+i = 0
+while(i < 21)
+  sortir tabNbEtudiantCote[i]
+endwhile 
+------
+
+// EX 2
+
+module(nombreScores;scores;nbScoreNiveau)
+---*
+nbScoreNiveau = ARRAY[5]
+iScore = 0
+iNiveau = 0
+
+while(iScore < 5000)
+
+if(scores[i] >= 101)
+nbScoreNiveau[0] = scores[iScore]
+if(scores[i] >= 201)
+nbScoreNiveau[1] = scores[iScore]
+if(scores[i] >= 301)
+nbScoreNiveau[2] = scores[iScore]
+if(scores[i] >= 401)
+nbScoreNiveau[3] = scores[iScore]
+if(scores[i] > 500)
+nbScoreNiveau[4] = scores[iScore]
+endif
+endif
+endif
+endif
+
+iScore++
+endwhile
+------
+------
+___________________________________________________________
+
+
+// EX 3
+
+// Utiliser un tableau de structure
+
+module(infosVentesEtEntreprise;fiche, nbDelegues;)
+---*
+iDelegue = 0
+iVentes = 0
+while(iDelegue < nbDelegues)
+while(iVentes < 5)
+endwhile
+endwhile
+------
+
+
+
+// EX 4
+
+TAB créé
+worstDélégués { cell(5*) { nom, chiffreVentes
+module(afficherStatDélégués;;)
+---*
+iJour = 0
+while(iJour < 5)
+ worstDélégué[iJour].chiffreVentes = HV
+worstDélégué[iJour].nom = ""
+iJour++
+endwhile
+module(ficheObtenue;;ficheDélégué, ficheExiste)
+while (ficheExiste)
+nbJoursTravail = 0
+total = 0
+iJour = 0
+while (iJour < 5)
+if (ficheDélégué.ventes[iJour] != 0)
+total += ficheDélégué.ventes[iJour]
+if(ficheDélégué.ventes[iJour] < worstDélégué[iJour].chiffreVentes)
+worstDélégué[iJour].chiffreVentes = ficheDélégué.ventes[iJour]
+worstDélégué[iJour].nom = ficheDélégué.nom
+endif
+nbJoursTravail  ++
+endif
+iJour ++
+endwhile
+if (nbJoursTravail  != 0)
+moyenneVentes = total / nbJoursTravail
+else 
+moyenneVentes = 0
+endif 
+
+sortir ficheDélégué.nom, moyenneVentes
+
+module(ficheObtenue;;ficheDélégué, ficheExiste)
+endwhile
+
+i = 0
+while(i < 5)
+sortir worstDélégués[i].nom, worstDélégués[i].chiffreVentes
+endwhile
+
+------
+
+
+// EX 5
+
+IN: participants {cell(50*) {nom, nomPays, points {cell(5*)
+
+OUT: par participant (50) {nom, nomPays, totalPoints, numMeilleureEpreuve
+--   nom du meilleur (nomMax)
+--   par épreuve (5*) nom du meilleur et nom du moins bon
+
+Tab créé : piresEtMeilleurs (5) {nomMeilleur, pointsMeilleur, nomPire, pointsPire
+
+module(afficherStatsParticipants;participants ;)
+---*
+//  piresEtMeilleurs = ARRAY[5]
+iPireEtMeilleur = 0
+while (iPireEtMeilleur < 5)
+piresEtMeilleurs [iPireEtMeilleur].pointsMeilleur = -1
+piresEtMeilleurs [iPireEtMeilleur].pointsPire = 21
+iPireEtMeilleur++
+endwhile
+
+totalMax= 0
+
+iParticipant = 0
+while (iParticipant < 50)
+iMax = 0 //numéro de la meilleure épreuve
+totalPoints = 0
+
+iPoint = 0
+while (iPoint < 5)
+
+totalPoints += participants[iParticipant].points[iPoint]
+
+if (participants[iParticipant].points[iPoint] > participants[iParticipant].points[iMax])
+iMax = iPoint
+endif
+
+if (participants[iParticipant].points[iPoint] < piresEtMeilleurs [iPoint].pirePoints)
+piresEtMeilleurs [iPoint].pirePoints = participants[iParticipant].points[iPoint]
+piresEtMeilleurs [iPoint].nomPire = participants[iParticipant].nom
+endif
+
+
+if (participants[iParticipant].points[iPoint] > piresEtMeilleurs [iPoint].meilleurPoints)
+piresEtMeilleurs [iPoint].meilleurPoints = participants[iParticipant].points[iPoint]
+piresEtMeilleurs [iPoint].nomMeilleur = participants[iParticipant].nom
+endif
+
+iPoint++
+endwhile
+
+if (totalPoints > totalMax)
+totalMax = totalPoints
+nomMax = participants[iParticipant].nom
+endif
+
+sortir participants[iParticipant].nom, participants[iParticipant].nomPays, totalPoints,iMax + 1
+iParticipant++
+endwhile
+sortir nomMax
+
+iPireEtMeilleur = 0
+while (iPireEtMeilleur < 5)
+sortir piresEtMeilleurs [iPireEtMeilleur].nomPire
+sortir piresEtMeilleurs [iPireEtMeilleur].nomMeilleur
+iPireEtMeilleur++
+endwhile
+----
+
+// EX 7
+
+Critiques :
+
+-  sortir groupe ?? D'ou vient le groupe ??
+-  module jourMois le passage en paramètre de la date de naissance n'est pas correct
+-  Si l'étudiant a été trouvé dans la liste on continue quand même de le recherché... Bizzarre...
+
+Correction du DA :
+
+module(AfficherGroupeDateAnniv;etudiants, nbEtudiant;)
+---*
+obtenir nom
+while (nom != "zzz")
+  iEtud = 0
+  trouve = false
+  while(iEtud < nbEtudiants && !trouve)
+    if(etudiants[iEtud].nom == nom)
+      sortir etudiants[iEtud].groupe
+      module(jourMois;etudiant[iEtud].dateNaissance;jour,mois)
+      sortir jour,mois
+      trouve = true
+    else
+     iEtud++
+    endif
+  endwhile
+  if(!trouve)
+   sortir "Etudiant introuvable"
+  endif
+obtenir nom
+endwhile
+------
+
+Ecriture du module de recherche de l'indice :
+
+module(rechercheIndiceEtudiant;etudiants,nom,nbEtudiant;iEtud)
+---*
+iEtud = 0
+while(etudiants[iEtud].nom != nom && iEtud < nbEtudiant)
+  iEtud++
+endwhile
+------
+
+Module modifié avec le module de recherche :
+
+module(AfficherGroupeDateAnniv;etudiants, nbEtudiant;)
+---*
+obtenir nom
+while (nom != "zzz")
+   module(rechercheIndiceEtudiant;etudiants,nom,nbEtudiant;iEtud)
+   if(iEtud < nbEtudiant)
+      sortir etudiants[iEtud].groupe
+      module(jourMois;etudiant[iEtud].dateNaissance;jour,mois)
+      sortir jour,mois
+   else
+    sortir "Etudiant introuvable"
+   endif
+obtenir nom
+endwhile
+------
+
+// EX 8
+
+// Version 1
+
+module(afficherInfosGroupes;étudiants, nbEtudiants;)
+---*
+iGroupe = 0
+while (iGroupe < 8)
+  groupes[iGroupe].nbMembres = 0
+ // groupes[iGroupe].membres = ARRAY[nbEtudiants]
+iGroupe ++
+endwhile
+
+iEtud = 0
+while (iEtud < nbEtudiants)
+  iGroupe = etudiants[iEtud].groupe - 1
+  nbMembres = groupes[iGroupe].nbMembres
+  groupes[iGroupe].membres[nbMembres].prénom = etudiants[iEtud].prénom
+  groupes[iGroupe].membres[nbMembres].nom = etudiants[iEtud].nom
+  groupes[iGroupe].nbMembres++
+  iEtud++
+endwhile
+
+iGroupe = 0
+while (iGroupe < 8)
+  sortir "Groupe : ", iGroupe + 1
+  iMembre = 0
+  while (iMembre < groupes[iGroupe].nbMembres)
+    sortir "Nombres de membres : ", groupes[iGroupe].nbMembres
+    sortir groupes[iGroupe].membres[iMembre].nom, groupes[iGroupe].membres[iMembre].prénom
+    iMembre++
+enddo
+iGroupe ++
+endwhile
+------
+
+
+// Version 2
+
+module(afficherInfosGroupes;étudiants, nbEtudiants;)
+---*
+// lettres = ARRAY[8]
+lettres[0]='A'
+lettres[1]='B'
+...
+lettres[7]='H'
+iGroupe = 0
+while (iGroupe < 8)
+  groupes[iGroupe].nbMembres = 0
+ // groupes[iGroupe].membres = ARRAY[nbEtudiants]
+iGroupe ++
+endwhile
+
+iEtud = 0
+while (iEtud < nbEtudiants)
+  lettreGroupe = etudiants[iEtud].groupe 
+  iGroupe = 0
+while (iGroupe <8 AND lettreGroupe != lettres[iGroupe])
+iGroupe ++
+endwhile
+  nbMembres = groupes[iGroupe].nbMembres
+  groupes[iGroupe].membres[nbMembres].prénom = etudiants[iEtud].prénom
+  groupes[iGroupe].membres[nbMembres].nom = etudiants[iEtud].nom
+  groupes[iGroupe].nbMembres++
+  iEtud++
+endwhile
+
+iGroupe = 0
+while (iGroupe < 8)
+  sortir "Groupe : ", iGroupe + 1
+  iMembre = 0
+  while (iMembre < groupes[iGroupe].nbMembres)
+    sortir "Nombres de membres : ", groupes[iGroupe].nbMembres
+    sortir groupes[iGroupe].membres[iMembre].nom, groupes[iGroupe].membres[iMembre].prénom
+    iMembre++
+enddo
+iGroupe ++
+endwhile
+------
+
+//EX 10
+
+....
+
+// EX 11
+
+
+module(infosFacture;articles;)
+---*
+module(ficheObtenue;;ficheExiste,ficheCommande)
+while(ficheExiste)
+while()
+endwhile
+sortir ficheCommande.nomClient
+module(ficheObtenue;;ficheExiste,ficheCommande)
+endwhile
+------

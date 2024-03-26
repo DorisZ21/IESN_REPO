@@ -1,0 +1,94 @@
+html {
+  background-color: black;
+}
+
+body {
+  width: 800px;
+  margin: 0 auto;
+  background-color: papayawhip;
+  padding: 20px;
+  font-family: "georgia";
+}
+
+h1 {
+  color: #086788;
+  background: linear-gradient(#086788, papayawhip 6%, papayawhip 94%, #086788);
+  padding: 6px;
+  font-variant: small-caps;
+  font-size: 300%;
+  text-align: center;
+  text-shadow: 3px 3px 3px #999;
+}
+
+h2 {
+  color: #086788;
+  padding-left: 4px;
+  border-bottom: 1px solid #4E6E5D;
+}
+
+h3 {
+  color: #086788;
+}
+
+a {
+  color: #086788;
+  transition: background-color 1s;
+}
+
+a:hover {
+  background-color: #F0C808;
+}
+
+img {
+  border: 2px solid #086788;
+}
+
+img:not(a img) {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  border: 0;
+}
+
+td, th {
+  padding: 3px;
+  text-align: center;
+}
+
+th {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 2px solid #06AED5;
+}
+
+td {
+  border: 1px solid #06AED5;
+}
+
+th {
+  color: #086788;
+  font-variant: small-caps;
+}
+
+ul {
+  list-style-type: circle;
+}
+
+ol {
+  margin-left: 20px;
+  padding-left: 25px;
+  border-left: 4px double #F0C808;
+}
+
+li {
+  padding-bottom: 3px;
+}
+
+

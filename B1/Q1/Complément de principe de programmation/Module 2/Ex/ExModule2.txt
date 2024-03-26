@@ -1,0 +1,387 @@
+// Complément de progra Ex1
+// a)
+module(encoderChiffreEx1;;)
+---*
+nombre = 0
+obtenir chiffre 
+
+while (chiffre != 0)
+  nombre = (nombre * 10) + chiffre
+  sortir "Entrez un autre chiffre (0 pour arrêter)"
+  obtenir chiffre 
+endwhile
+
+sortir nombre
+------
+
+// b)
+module(chiffreOrdreInverse;;)
+---*
+multiplicateur = 1
+nbFinal = 0
+obtenir chiffre
+
+while (chiffre != 0)
+  nbrFinal = nbFinal + chiffre * multiplicateur
+  multiplicateur = multiplicateur * 10
+  obtenir chiffre
+endwhile
+
+sortir nbFinal
+------
+
+
+// EX 2
+module(CarreNombre;;)
+---*
+compteurLigne = 0
+compteurColonne = 0
+carreNombre = "";
+obtenir nombre
+while (nombre > 0 && compteurLigne <= 5)
+  while (compteurColonne <= 5)
+    carreNombre = carreNombre,nombre
+    compteurColonne++
+  endwhile
+  carreNombre = carreNombre, "\n"
+  compteurLigne++
+  obtenir nombre
+endwhile
+
+sortir carreNombre
+------
+
+// EX 3
+
+module(TriangleNombre;;)
+
+---* 
+compteurLigne = 0
+compteurColonne = 0
+tanponNb = 0
+obtenir nombre
+nbColonne = nombre
+nbLigne = nombre
+
+while (nombre != 0 && compteurLigne <= nbLigne)
+  tanponNb = nombre
+  while (compteurColonne < nbColonne)
+    sortir tanponNb
+    tanponNb--
+    compteurColonne++
+  endwhile
+compteurColonne = 0
+sortir "\n"
+nbColonne--
+nombre--
+compteurLigne++
+endwhile
+------
+
+// EX 4
+
+module(nombrePremier;;)
+---*
+obtenir nombre 
+while (nombre != 0)
+trouveDiviseur = false
+n = 2
+while (n < nombre)
+if ((nombre % n) == 0)
+  trouveDiviseur = true 
+  sortir n
+endif
+n++
+endwhile
+if (NOT trouveDiviseur)
+  sortir nombre, " est un nombre premier" 
+else
+  sortir "sont des diviseurs (autres que 1 et lui même) de ", nombre
+endif
+obtenir nombre
+endwhile
+------
+
+
+module(salaire;nombresHeures,tauxHoraire;salaire)
+---*
+if(nombresHeures > 36)
+  heuresSupp = nombresHeures - 36
+  salaire = (nombresHeures - heuresSupp) * tauxHoraire + heuresSupp * (tauxHoraire * 1.4)
+else 
+  salaire = nombresHeures * 35
+endif
+sortir salaire
+------
+
+module(prime; lieu, nbEnfants, ancienneté; prime)
+---*
+primeAncienneté = 24 * ancienneté
+if (ancienneté > 6)
+  primeAncienneté += (ancienneté - 6) * 12
+endif
+primeFamille = 60 * nbEnfants
+if (nbEnfants > 3)
+  primeFamille = (nbEnfants - 3) * 15
+endif
+if (primeFamille > 300)
+  primeFamille = 300
+endif
+if (lieu == 0)
+  primeDéplacement = 0
+elseif (lieu == 1)
+  primeDéplacement = 135
+elseif (lieu == 2)
+  primeDéplacement = 275
+endif
+prime = primeFamille + primeDéplacement + primeAncienneté
+___
+
+module(exo6)
+---*
+numEmployé = 1
+
+while (numEmployé <= 20)
+  obtenir nom, nbHeures, tauxHoraire, lieu, nbEnfants, ancienneté
+
+  module(salaire; nbHeures, tauxHoraire; salaire)
+
+  module(prime; lieu, nbEnfants, ancienneté; prime)
+
+  sortir nom, salaire, prime
+  numEmployé++
+endwhile
+___
+
+
+module(exo6)
+---*
+numEmployé = 1
+totalPrimes = 0
+salaireMax = 0
+
+while (numEmployé <= 20)
+  obtenir nom, nbHeures, tauxHoraire, lieu, nbEnfants, ancienneté
+
+  module(salaire; nbHeures, tauxHoraire; salaire)
+
+  module(prime; lieu, nbEnfants, ancienneté; prime)
+
+  sortir nom, salaire, prime
+  totalPrimes += prime
+  if (salaire > salaireMax)
+    salaireMax = salaire
+    employéSalaireMax = nom
+  endif
+  numEmployé++
+endwhile
+sortir totalPrimes
+sortir employéSalaireMax
+___
+
+module(CalculePrixTec;codeFamilleNombreuse,age,nbrsZones;prixAbo)
+---*
+if(nbrsZones > 0 && nbrsZones <= 2)
+if(age < 12 OR age >= 65) // inférieur à 12 ou supérieur ou égal a 65
+  prixAbo = 0
+else
+if(age <= 24) // inférieur ou égal à 24 ans 
+  prixAbo = 46,6
+else
+  prixAbo = 111
+endif
+endif
+else
+if(age < 12 OR age >= 65) // inférieur à 12 ou supérieur ou égal a 65
+  prixAbo = 0
+else
+if(age <= 24) // inférieur ou égal à 24 ans 
+  prixAbo = 63
+else
+  prixAbo = 139,5
+endif
+endif
+endif
+
+if(codeFamilleNombreuse == 1)
+prixAbo -= (prixAbo * 0.2)
+endif 
+
+sortir prixAbo
+------
+
+
+module(AboTec;dateJour;)
+---*
+obtenir nomClient
+while (nomClient != "zzz")
+obtenir nbrsZones, dateNaissance, codeFamilleNombreuse
+
+obtenir nomClient
+endwhile
+------
+
+  // exo 8 Correction sur discord 
+
+module(CalcPrixLocation;;)
+---*
+nbrsJoursMaxStudio = 0
+nbrsJoursVueMer = 0
+nbrsJoursTotal = 0
+moyenneNbrsJoursVueMer = 0
+nomClientJoursMaxStudio = ""
+obtenir nom
+while (nom != "xxx")
+obtenir nbrsJoursLocation,code
+nbrsJoursTotal += nbrsJoursLocation
+if(code == 0)
+   prixLocationJours = 50
+   if(nbrsJoursLocation > nbrsJoursMaxStudio )
+   nomClientJoursMaxStudio = nom
+   nbrsJoursMaxStudio = nbrsJoursLocation
+   endif 
+else 
+if(code == 1)
+prixLocationJours = 100
+else
+if(code == 2)
+prixLocationJours = 120
+else
+if(code == 3)
+prixLocationJours == 160
+else 
+if(code == 4)
+prixLocationJours = 200
+nbrsJoursVueMer += nbrsJoursLocation
+endif 
+endif 
+endif 
+endif
+endif 
+
+if(nbrsJoursLocation < 8)
+forfait = 100
+else
+if(nbrsJoursLocation <= 15)
+forfait = 150
+else
+forfait = 200
+endif
+endif 
+
+
+prixTotal = (nbrsJoursLocation * prixLocationJours) + forfait
+moyenneNbrsJoursVueMer = nbrsJoursVueMer / nbrsJoursLocation
+
+sortir nom, prixTotal
+sortir nomClientJoursMaxStudio
+sortir moyenneNbrsJoursVueMer
+
+obtenir nom
+endwhile
+------
+
+// Exo 9 Correction sur discord 
+
+module(EtablirStarClasse;;) // Majuscule début de nom de module ?? 
+---*
+meilleurPourcentage = 0 // Il faut déclarer et initialiser la variable meilleurPourcentage pour éviter les erreurs
+nbrsEtudiants = 0 // parail ici
+coteMathTotal = 0 // ici aussi
+obtenir identite 
+while (identite != "zzz")
+nbrsEtudiants++
+nbrsCoursValides = 0 // Initialiser la variable à 0 pour que chaque élèves puisse commencer avec 0 en nombre de cours validés 
+pourcentage = 0 // Initialiser le pourcentage à 0 pour que le pourcentage ne soit pas faussé
+obtenir coteFrancais, coteAnglais, coteMath
+coteMathTotal += coteMath
+pourcentage = ((coteFrancais + coteAnglais + coteMath) / 3) * 5 // Faire * 5 pour avoir un pourcentage car c'est que ce qui est demandé et pas une moyenne
+if(coteFrancais >= 10)
+ nbrsCoursValides ++ // ++ pour ajouter 1 et pas = 1
+else
+ nbrsEchecsFrancais++
+endif
+
+if(coteAnglais >= 10)
+ nbrsCoursValides ++ 
+else
+ nbrsEchecsAnglais++
+endif
+
+if(coteMath >= 10)
+ nbrsCoursValides ++
+else
+ nbrsEchecsMath++
+endif
+
+if(pourcentage > meilleurPourcentage && nbrsCoursValides == 3) // c'est plus simple de vérifié si il a validé les 3 cours 
+  nomMeilleurEleve = nom
+  meilleurPourcentage = pourcentage
+endif 
+
+sortir identite, pourcentage, nbCoursValides
+
+obtenir identite
+endwhile
+
+MoyenneClasseMath = coteMathTotal / nbrsEtudiants // Le calcule de la moyenne doit se faire à la fin de la boucle quand toutes les données des étudiants ont été remplies 
+
+sortir nomMeilleurEleve
+sortir nbrsEchecsFrançais, nbrsEchesMath, nbrsEchecsAnglais
+sortir MoyenneClasseMath
+
+------
+
+
+// EX 10
+
+module(afficherInfosMagasin;;)
+---*
+obtenir nomMagasin
+chiffreAffaireMinBx = HV
+chiffreAffaireMaxBelgique = LV
+ventesTotalBx = 0
+ventesTotalFlandre = 0
+ventesTotalWalonnie = 0
+
+while (nomMagasin != "xxx")
+  obtenir chiffreAffaire
+  obtenir codeRegion
+
+  if(codeRegion == "B")
+      ventesTotalBx += chiffreAffaire
+      if(chiffreAffaire < chiffreAffaireMinBx)
+             nomMagasinChiffreMinBx = nomMagasin
+              chiffreAffaireMinBx = chiffreAffaire
+      endif
+  else
+    if(codeRegion == "F")
+       ventesTotalFlandre += chiffreAffaire
+    else
+       ventesTotalWalonnie += chiffreAffaire
+    endif 
+  endif
+
+  if (chiffreAffaire > chiffreAffaireMaxBelgique)
+     nomMagasinChiffreMaxBelgique = nomMagasin
+     chiffreAffaireMaxBelgique = chiffreAffaire
+  endif
+
+  sortir nomMagasin, chiffreAffaire
+  obtenir nomMagasin
+endwhile
+
+nomRegionVentesMax = "Walonnie"
+max = ventesTotalWalonnie
+if(ventesTotalFlandre > max)
+  nomRegionVentesMax = "Flandre"
+else 
+  if(ventesTotalBx > max)
+     nomRegionVentesMax = "Bruxelles"
+  endif 
+endif 
+
+sortir nomMagasinChiffreMaxBelgique, nomMagasinChiffreMinBx
+sortir nomRegionVentesMax
+
+------
