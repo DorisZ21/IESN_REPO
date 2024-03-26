@@ -15,5 +15,7 @@ public class Main {
 
         ReservationPlaces premierReservation = new ReservationPlaces(2,true,moi,ouvertureFestival);
         System.out.println(premierReservation);
+
+        ReservationPlaces secondeReservation = new ReservationPlaces(moi,ouvertureFestival);
     }
 }
