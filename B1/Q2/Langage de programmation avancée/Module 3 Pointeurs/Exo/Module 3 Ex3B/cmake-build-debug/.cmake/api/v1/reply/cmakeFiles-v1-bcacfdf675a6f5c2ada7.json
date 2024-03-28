@@ -21,6 +21,11 @@
 		{
 			"isCMake" : true,
 			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2023.3.2/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeMinGWFindMake.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
 			"path" : "C:/Program Files/JetBrains/CLion 2023.3.2/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake"
 		},
 		{
@@ -305,6 +310,21 @@
 		{
 			"isCMake" : true,
 			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2023.3.2/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeFindCodeBlocks.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2023.3.2/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2023.3.2/bin/cmake/win/x64/share/cmake-3.27/Modules/ProcessorCount.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
 			"path" : "C:/Program Files/JetBrains/CLion 2023.3.2/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCInformation.cmake"
 		},
 		{
@@ -439,8 +459,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "C:/Users/Doria/Desktop/IESN/B1/Q2/Langage de programmation avanc\u00e9e/Module 3 Pointeurs/Exo/3B_Bibliotheque/cmake-build-debug",
-		"source" : "C:/Users/Doria/Desktop/IESN/B1/Q2/Langage de programmation avanc\u00e9e/Module 3 Pointeurs/Exo/3B_Bibliotheque"
+		"build" : "C:/Users/Doria/Desktop/IESN_REPO/B1/Q2/Langage de programmation avanc\u00e9e/Module 3 Pointeurs/Exo/Module 3 Ex3B/cmake-build-debug",
+		"source" : "C:/Users/Doria/Desktop/IESN_REPO/B1/Q2/Langage de programmation avanc\u00e9e/Module 3 Pointeurs/Exo/Module 3 Ex3B"
 	},
 	"version" : 
 	{

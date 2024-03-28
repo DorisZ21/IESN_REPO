@@ -44,7 +44,7 @@ void afficherMenu(void);
 void afficherMessage(CodeMessage);
 void afficherLivre(Livre);
 CodeMessage ajouterLivre(Livre,ChainonLivre**);
-bool rechercheLivre(char[],ChainonLivre*);
+ChainonLivre* rechercheLivre(Livre ,ChainonLivre*,ChainonLivre**);
 void afficheBibliotheque(ChainonLivre*);
 Livre obtenirLivre(void);
 
@@ -141,14 +141,23 @@ CodeMessage ajouterLivre(Livre livre,ChainonLivre** ppBibliotheque){
     return message;
 }
 
-bool rechercheLivre(char titre[],ChainonLivre* pBibliotheque){
-    while (pBibliotheque != NULL && strcmp(pBibliotheque->livre.titre,titre) != 0){
-        pBibliotheque = pBibliotheque->pSuiv;
+ChainonLivre* rechercheLivre(Livre livre,ChainonLivre* pBibliotheque,ChainonLivre** pLivreSauv){
+    ChainonLivre* pLivre = pBibliotheque;
+    while(pLivre != NULL && livre.auteur > pLivre->livre.auteur){
+        *pLivreSauv = pLivre;
+        pLivre = pLivre->pSuiv;
+    }
+    while(pLivre != NULL && livre.auteur == pLivre->livre.auteur && livre.annee > pLivre->livre.annee){
+        *pLivreSauv = pLivre;
+        pLivre = pLivre->pSuiv;
     }
 
-    bool estDejaPresent = pBibliotheque != NULL;
+    while (pLivre != NULL && livre.auteur == pLivre->livre.auteur && livre.annee == pLivre->livre.annee && livre.numTome > pLivre->livre.numTome){
+        *pLivreSauv = pLivre;
+        pLivre = pLivre->pSuiv;
+    }
 
-    return estDejaPresent;
+    if(pLivre == NULL && )
 }
 
 void afficheBibliotheque(ChainonLivre* pBibliotheque){

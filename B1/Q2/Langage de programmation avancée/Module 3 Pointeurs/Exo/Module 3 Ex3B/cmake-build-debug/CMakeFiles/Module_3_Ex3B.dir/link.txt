@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2023.3.2\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\Module_3_Ex3B.dir/objects.a
+"C:\PROGRA~1\JetBrains\CLion 2023.3.2\bin\mingw\bin\ar.exe" qc CMakeFiles\Module_3_Ex3B.dir/objects.a @CMakeFiles\Module_3_Ex3B.dir\objects1.rsp
+"C:\PROGRA~1\JetBrains\CLion 2023.3.2\bin\mingw\bin\gcc.exe" -g -Wl,--whole-archive CMakeFiles\Module_3_Ex3B.dir/objects.a -Wl,--no-whole-archive -o Module_3_Ex3B.exe -Wl,--out-implib,libModule_3_Ex3B.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Module_3_Ex3B.dir\linkLibs.rsp
