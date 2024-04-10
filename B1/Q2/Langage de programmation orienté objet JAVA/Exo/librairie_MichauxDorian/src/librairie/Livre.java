@@ -31,6 +31,14 @@ public class Livre {
         return this.reductionBoursier;
     }
 
+    public String getTitre(){
+        return this.titre;
+    }
+
+    public Editeur getEditeur(){
+        return this.editeur;
+    }
+
     public void setNbPages(int nbPages){
         if(nbPages < 1){
             if(this.nbPages == 0){

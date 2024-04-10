@@ -19,6 +19,15 @@ public class Etudiant {
         this(prenomNom,faculte,cycle,numeroAnnee,false);
     }
 
+
+    public String getPrenomNom(){
+        return this.prenomNom;
+    }
+
+    public int getNumeroAnnee(){
+       return  this.numeroAnnee;
+    }
+
     public boolean getBoursier(){
         return this.boursier;
     }

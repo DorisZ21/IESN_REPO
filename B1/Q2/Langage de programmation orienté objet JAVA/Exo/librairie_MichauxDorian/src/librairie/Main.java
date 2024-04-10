@@ -36,6 +36,22 @@ public class Main {
 
         // Commande
 
+        Commande commandeEnCours = new Commande(2,premierLivre,premierEtudiant);
+        System.out.println(commandeEnCours.soldeAPayer());
+        System.out.println(commandeEnCours.soldeAPayer(20));
+        System.out.println(commandeEnCours);
 
+        System.out.println(commandeEnCours.getEtudiant());
+        System.out.println(commandeEnCours.getLivre().getTitre());
+        System.out.println(commandeEnCours.getLivre().getEditeur().getCategorie());
+
+        // Doctorant
+
+        Doctorant doc = new Doctorant("Dorian Michaux","chimie",1,true,"La chope","bars");
+        doc.setFaculte("physique");
+        System.out.println(doc.getNumeroAnnee());
+        System.out.println(doc.descriptionFormation());
+        System.out.println(doc.descriptionThese());
+        System.out.println(doc);
     }
 }
